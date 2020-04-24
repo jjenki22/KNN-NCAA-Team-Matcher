@@ -2,14 +2,14 @@
 
 We are interested in creating a model that will cluster college basketball teams from 2008 to 2019 to determine the teams that are most similar to each other based on statistics. Within this project, we are going to use data from the following pages on Ken Pomeroy's website: homepage, four factors, miscellaneous team stats: defense, and various team stats: offense. This model will utilize Ken Pom's data and k-means clustering techniques to find similar teams. We believe that this project will be most beneficial to two groups. First, we believe that this tool will help college coaches when scouting an unfamiliar opponent. They can enter the team and find if there are any teams similar to their opponent that they have previously faced. Then, they can go back to the film and see what they did well and what they did not do well against the team that matches their upcoming opponent. Second, we believe that avid college basketball fans. They will be able to compare teams across generations and identify based on a team they enjoyed watching with other teams that statistically play similar to them. 
 
-### [Ken Pomeroy Website Link](https://kenpom.com/index.php?y=2019)
+#### [Ken Pomeroy Website Link](https://kenpom.com/index.php?y=2019)
 
 ## Our Team
 
 Below you can find hyperlinks to the email addresses for the members of our team.
 
-### [Joe Jenkins](mailto:jjenki22@nd.edu)
+#### [Joe Jenkins](mailto:jjenki22@nd.edu)
 
-### [Eric Gilgenbach](mailto:egilgenb@nd.edu)
+#### [Eric Gilgenbach](mailto:egilgenb@nd.edu)
 
-### [Anna Spahn](mailto:aspahn2@nd.edu)
+#### [Anna Spahn](mailto:aspahn2@nd.edu)
