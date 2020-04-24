@@ -346,7 +346,7 @@ server <- function(input, output, session){
     )
     
     offense_data <- KNN_Matches_Info() %>% 
-      select(Off_3P, Off_2P, Offense_FT, Off_A, Off_3P_Attempts, Off_eFG, Off_Reb, Off_FT_Rate)
+      select(Off_3P, Off_2P, Off_FT, Off_A, Off_3P_Attempts, Off_eFG, Off_Reb, Off_FT_Rate)
     
     offense_plot <- plot_ly(type = "scatterpolar",
                             mode = "closest",
@@ -453,7 +453,7 @@ server <- function(input, output, session){
     )
     
     offense_data <- KNN_Matches_Info() %>% 
-      select(Team_Year, Off_3P, Off_2P, Offense_FT, Off_A, Off_3P_Attempts, Off_eFG, Off_Reb, Off_FT_Rate, Off_Stl, Off_NST, Off_Blk)
+      select(Team_Year, Off_3P, Off_2P, Off_FT, Off_A, Off_3P_Attempts, Off_eFG, Off_Reb, Off_FT_Rate, Off_Stl, Off_NST, Off_Blk)
   }))
   
   # Defense
@@ -467,7 +467,7 @@ server <- function(input, output, session){
     )
     
     defense_data <- KNN_Matches_Info() %>% 
-      select(Opp_3P, Opp_2P, Opp_FT, Off_A, Opp_3P_Attempts, Opp_eFG, Def_Reb, Opp_FT_Rate)
+      select(Opp_3P, Opp_2P, Opp_FT, Opp_A, Opp_3P_Attempts, Opp_eFG, Def_Reb, Opp_FT_Rate)
     
     defense_plot <- plot_ly(type = "scatterpolar",
                             mode = "closest",
@@ -568,7 +568,7 @@ server <- function(input, output, session){
     )
     
     defense_data <- KNN_Matches_Info() %>% 
-      select(Team_Year, Opp_3P, Opp_2P, Opp_FT, Off_A, Opp_3P_Attempts, Opp_eFG, Def_Reb, Opp_FT_Rate, Defense_Stl, Opp_NST, Defense_Blk)
+      select(Team_Year, Opp_3P, Opp_2P, Opp_FT, Opp_A, Opp_3P_Attempts, Opp_eFG, Def_Reb, Opp_FT_Rate, Defense_Stl, Opp_NST, Defense_Blk)
     defense_data
   }))
   
