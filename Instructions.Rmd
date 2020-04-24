@@ -1,1 +1,53 @@
-## Instructions
+## Graph Tab:
+
+### Filters Panel:
+
+#### Choose a Team:
+
+##### Select a Team:
+
+#### Matching Characteristcis:
+
+##### Years Before Selected Team:
+
+##### Years After Selected Team:
+
+##### Range of Overall Ranking:
+
+##### Average Height:
+
+##### Show Conferences:
+
+##### Reset To Default: 
+
+### Four Factors:
+
+Within the visualization section of the page located beneath the lighter colored tab beginning with “Four Factors”, select team names from the colored legend on the right side of the page to display certain teams within the radar chart.
+
+#### Abreviations Used:
+
+  | Abbreviation | Meaning | Abbreviation | Meaning 
+  |---| --- | --- | ---
+  | Opp eFG | Opponent's Effective Field Goal Percentage | Off eFG | Offensive Effective Field Goal Percentage
+  | Opp TO | Opponent's Turnover Percentage | Off TO | Offensive Turnover Percentage
+  | Def Reb | Defensive Rebound Percenatge | Off Reb | Offensive Rebound Percentage 
+  | Opp FT | Opponent's Free Throw Attempt Rate | Off FT | Offensive Free Throw Attempt Rate
+
+### Advanced Statistics 
+
+### Offense:
+
+### Defense:
+
+### Experience and Luck:
+
+## Data:
+
+### 10 Similar Teams:
+
+### Teams Macthing Criteria:
+
+### All Teams:
+
+## Map:
+
