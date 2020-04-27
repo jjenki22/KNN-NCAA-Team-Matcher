@@ -7,7 +7,7 @@ ui <- (
                           column(2,
                                  h5(tags$b("Selected Team:"))),
                           column(2,
-                                 h5(tags$b("Macthed Teams:")))),
+                                 h5(tags$b("Matched Teams:")))),
                         fluidRow(
                           column(1,
                                  uiOutput("selected_team_home")),
@@ -206,10 +206,20 @@ ui <- (
                         br(),
                         leafletOutput("NCAA_Map")),
                tabPanel("Instructions",
-                        tags$img(src="final_four.jpg", height = 450),
+                        fluidRow(
+                          column(1,
+                                 h4(" ")),
+                          column(8, 
+                                 tags$img(src="final_four.jpg", height = 500))),
                         br(),
-                        includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/Instructions.Rmd")),
+                        includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/Instructions.Rmd"),
+                        br()),
                tabPanel("About Us",
-                        tags$img(src="Notre Dame.jpeg", height = 500),
+                        fluidRow(
+                          column(1, 
+                                 hr("")),
+                          column(8, 
+                                 tags$img(src="Notre Dame.jpeg", height = 500))),
                         br(),
-                        includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/SportsAnalytics.rmd")))))
+                        includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/SportsAnalytics.rmd"),
+                        br()))))
