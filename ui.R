@@ -204,7 +204,7 @@ ui <- (
       tabPanel("Instructions",
                tags$img(src="final_four.jpg", height = 500),
                br(),
-               includeMarkdown("Instructions.rmd"),
+               includeMarkdown("Instructions Page.Rmd"),
                br()),
       tabPanel("About Us",
                tags$img(src="Notre Dame.jpeg", height = 500),
