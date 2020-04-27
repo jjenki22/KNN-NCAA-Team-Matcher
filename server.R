@@ -594,11 +594,17 @@ server <- function(input, output, session){
   })
   
   # Experience Plot 
-  output$experience_plot <- renderPlotly({ggplotly(
+  output$experience_plot <- renderPlotly({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     experience_plot <- ggplot(KNN_Matches_Info(), aes(Team_Year, Experience)) +
       geom_bar(stat="identity", color = "dodgerblue3", fill = "dodgerblue3") + theme_classic() + coord_flip() +
       labs(x= "", y = "Average Years in School")
-  )})
+  })
   
   # Offense small Data
   offense_small_stats <- reactive({
@@ -610,14 +616,20 @@ server <- function(input, output, session){
     melt(offense_small_stats(), id.vars="Team_Year")
   })
   
-  output$offense_small_plot <- renderPlotly({ggplotly(
-    ggplot(offense_melt(), aes(Team_Year, value)) +
+  output$offense_small_plot <- renderPlotly({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
+    small_off_plot <- ggplot(offense_melt(), aes(Team_Year, value)) +
       geom_bar(stat="identity", position="dodge", aes(fill = variable)) + theme_classic() + coord_flip() +
       labs(x = "", y = "Rate of Occurrence") + 
       scale_fill_manual(values = c("skyblue1", "slategray4", "steelblue4"),
                         name = "Category",
                         labels =c("Off Stl", "Off NST", "Off Blk"))
-  )})
+  })
   
   # Defense Small Stats
   defense_small_stats <- reactive({
@@ -629,14 +641,20 @@ server <- function(input, output, session){
     melt(defense_small_stats(), id.vars="Team_Year")
   })
   
-  output$defense_small_plot <- renderPlotly({ggplotly(
+  output$defense_small_plot <- renderPlotly({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     ggplot(defense_melt(), aes(Team_Year, value)) +
       geom_bar(stat="identity", position="dodge", aes(fill = variable)) + theme_classic() + coord_flip() +
       labs(x = "", y = "Rate of Occurrence") + 
       scale_fill_manual(values = c("skyblue1", "slategray4", "steelblue4"),
                         name = "Category",
                         labels =c("Def Stl", "Opp NST", "Def Blk"))
-  )})
+  })
   
   # Selected Team table 
   output$selected_team_table <- DT::renderDataTable(DT::datatable({
@@ -747,176 +765,374 @@ server <- function(input, output, session){
   # Images
   # Selected Team 
   output$selected_team_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[1],
              height = 45)
   })
   
   output$selected_team <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[1],
              height = 55)
   })
   
   output$selected_team_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[1],
              height = 80)
   })
   
   # Team 1
   output$team_1_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[2],
              height = 45)
   })
   
   output$team_1 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[2],
              height = 55)
   })
   
   output$team_1_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[2],
              height = 80)
   })
   
   # Team 2 
   output$team_2_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[3],
              height = 45)
   })
   
   output$team_2 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[3],
              height = 55)
   })
   
   output$team_2_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[3],
              height = 80)
   })
   
   # Team 3
   output$team_3_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[4],
              height = 45)
   })
   
   output$team_3 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[4],
              height = 55)
   })
   
   output$team_3_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[4],
              height = 80)
   })
   
   # Team 4
   output$team_4_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[5],
              height = 45)
   })
   
   output$team_4 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[5],
              height = 55)
   })
   
   output$team_4_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[5],
              height = 80)
   })
   
   # Team 5 
   output$team_5_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[6],
              height = 45)
   })
   
   output$team_5 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[6],
              height = 55)
   })
   
   output$team_5_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[6],
              height = 80)
   })
   
   # Team 6 
   output$team_6_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[7],
              height = 45)
   })
   
   output$team_6 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[7],
              height = 55)
   })
   
   output$team_6_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[7],
              height = 80)
   })
   
   # Team 7
   output$team_7_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[8],
              height = 45)
   })
   
   output$team_7 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[8],
              height = 55)
   })
   
   output$team_7_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[8],
              height = 80)
   })
   
   # Team 8 
   output$team_8_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[9],
              height = 45)
   })
   
   output$team_8 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[9],
              height = 55)
   })
   
   output$team_8_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[9],
              height = 80)
   })
   
   # Team 9 
   output$team_9_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[10],
              height = 45)
   })
   
   output$team_9 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[10],
              height = 55)
   })
   
   output$team_9_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[10],
              height = 80)
   })
   
   # Team 10 
   output$team_10_home <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[11],
              height = 45)
   })
   
   output$team_10 <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[11],
              height = 55)
   })
   
   output$team_10_map <-  renderUI({
+    
+    validate(
+      need(dim(all_other_teams())[1]>=10, "Need 10 Teams"
+      )
+    )
+    
     tags$img(src = arena_data()$Logos[11],
              height = 80)
   })
