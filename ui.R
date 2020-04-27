@@ -2,7 +2,8 @@ ui <- (
   fluidPage(
     theme = shinytheme("sandstone"),
     navbarPage(
-      title = div(img(src="ncaa logo.jpg", style="margin-top: -14px;", height = 57, "Team Matcher"), windowTitle = "Team Matcher"),
+      title = div(img(src="ncaa logo.jpg", style="margin-top: -14px;", height = 57, "Team Matcher")),
+      windowTitle = "NCAA Team Matcher",
       tabPanel("Graphs",
                fluidRow(
                  column(2,
