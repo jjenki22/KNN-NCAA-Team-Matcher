@@ -204,10 +204,10 @@ ui <- (
       tabPanel("Instructions",
                tags$img(src="final_four.jpg", height = 500),
                br(),
-               includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/Instructions.rmd"),
+               includeMarkdown("Instructions.rmd"),
                br()),
       tabPanel("About Us",
                tags$img(src="Notre Dame.jpeg", height = 500),
                br(),
-               includeMarkdown("https://raw.githubusercontent.com/jjenki22/KNN-NCAA-Team-Matcher/master/SportsAnalytics.rmd"),
+               includeMarkdown("SportsAnalytics.rmd"),
                br()))))
