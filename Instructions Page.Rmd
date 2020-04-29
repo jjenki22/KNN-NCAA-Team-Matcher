@@ -57,7 +57,7 @@
   - Adjusted Offensive Efficiency
 - AdjD:
   - Adjusted Defensive Efficiency
--AdjT:
+- AdjT:
   - Adjusted Tempo
   
 ### Offense:
